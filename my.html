@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+			<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+			<script src="https://unpkg.com/vue/dist/vue.js"></script>
+			<script src="https://unpkg.com/element-ui@1.3.3/lib/index.js"></script>
+		
+		<title>RunJS</title>
+
+</head>
+	<body>
+		<div id="app">
+				<template>
+    <el-table
+      :data="tabledata.slice((currentPage-1)*pagesize,currentPage*pagesize)"
+      style="width: 100%">
+      <el-table-column
+        prop="country_code"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="country_cnname"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="country_enname"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </template>
+			
+		<el-pagination
+  background
+  layout="total, sizes, prev, pager, next, jumper"
+			
+		@size-change="handleSizeChange"
+    @current-change="handleCurrentChange"
+    :current-page="currentPage"
+    :page-sizes="[10, 20, 30, 40]"
+    :page-size="pagesize"
+			
+  :total=parseInt(tabledata.length)>
+</el-pagination>
+			
+		</div>
+	</body>
+    <script type="text/javascript" src="my.js"></script>
+</html>
